@@ -1,0 +1,36 @@
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div
+      class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+    >
+      <div class="col mb-5">
+        <div class="card h-20" *ngFor="let produto of produtos">
+          <!--produtos foi criado dentro de produtos.component.ts-->
+          <a routerLink="/produtos/{{ produto.id }}">
+            <!-- Product image-->
+
+            <img class="card-img-top" [src]="produto.imagem" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">{{ produto.descricao }}</h5>
+                <!-- Product price-->
+                {{ produto.preco | currency: "BRL" }}
+              </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center">
+                <button type="button" class="btn btn-success">Comprar</button>
+                <div>
+                  <small class="text-muted">{{ produto.descricaoPreco }}</small>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
