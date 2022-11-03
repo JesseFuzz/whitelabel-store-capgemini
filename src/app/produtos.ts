@@ -114,4 +114,11 @@ export const produtos = [
     descricaoPreco: 'À vista no PIX',
     imagem: '/assets/teclado-2.jpg',
   },
+  {
+    id: 16,
+    descricao: 'Teclado ruim',
+    preco: 500.0,
+    descricaoPreco: 'À vista no cartão',
+    imagem: '/assets/laptop-1.jpg',
+  },
 ];
