@@ -14,7 +14,8 @@ export class DetalhesProdutoComponent implements OnInit {
   quantidade = 1;
   constructor(
     private produtosService: ProdutosService,
-    private route: ActivatedRoute // private notificacaoService: NotificacaoService
+    private route: ActivatedRoute,
+    private notificacaoService: NotificacaoService
   ) {}
 
   ngOnInit(): void {
@@ -23,6 +24,6 @@ export class DetalhesProdutoComponent implements OnInit {
     this.produto = this.produtosService.getOne(Number(produtoId));
   }
   adicionarAoCarrinho() {
-    // this.notificacaoService.notificar('O produto foi adicionado ao carrinho!');
+    this.notificacaoService.notificar('O produto foi adicionado ao carrinho!');
   }
 }
