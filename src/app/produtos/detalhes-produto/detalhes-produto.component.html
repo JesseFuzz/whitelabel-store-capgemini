@@ -1,4 +1,4 @@
-<div class="container px-4 px-lg-5">
+<!-- <div class="container px-4 px-lg-5">
   <button
     class="navbar-toggler"
     type="button"
@@ -42,26 +42,30 @@
       </button>
     </form>
   </div>
-</div>
+</div> -->
 <!-- Product section-->
 <section class="py-5">
-  <div class="container px-4 px-lg-5 my-5">
+  <div class="border border-dark rounded container px-4 px-lg-5 my-5">
     <div class="row gx-4 gx-lg-5 align-items-center">
       <div class="col-md-6">
         <img
           class="card-img-top mb-5 mb-md-0"
-          src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg"
+          [src]="produto?.imagem"
           alt="..."
         />
       </div>
       <div class="col-md-6">
-        <div class="small mb-1">SKU: BST-498</div>
-        <h1 class="display-5 fw-bolder">Shop item template</h1>
+        <div class="small mb-1">{{ produto?.descricaoPreco }}</div>
+        <h1 class="display-5 fw-bolder">{{ produto?.descricao }}</h1>
         <div class="fs-5 mb-5">
-          <span class="text-decoration-line-through">$45.00</span>
-          <span>$40.00</span>
+          <span class="text-decoration-line-through">{{
+            produto?.preco | currency: "BRL"
+          }}</span>
+          <br />
+          <span>{{ produto?.preco | currency: "BRL" }}</span>
         </div>
         <p class="lead">
+          <span></span>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
           at dolorem quidem modi. Nam sequi consequatur obcaecati excepturi
           alias magni, accusamus eius blanditiis delectus ipsam minima ea iste
@@ -74,11 +78,20 @@
             type="num"
             value="1"
             style="max-width: 3rem"
+            [(ngModel)]="quantidade"
+            min="1"
           />
-          <button class="btn btn-outline-dark flex-shrink-0" type="button">
+          <button
+            class="d-block p-2 btn btn-outline-dark flex-shrink-0"
+            type="button"
+            (click)="adicionarAoCarrinho()"
+          >
             <i class="bi-cart-fill me-1"></i>
-            Add to cart
+            Adicionar ao carrinho
           </button>
+          <div class="p-2 lead d-block">
+            {{ produto?.quantidadeEstoque }} unidade(s) em estoque
+          </div>
         </div>
       </div>
     </div>
