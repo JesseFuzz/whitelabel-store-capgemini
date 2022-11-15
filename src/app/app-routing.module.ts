@@ -9,8 +9,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('./produtos/produtos.module').then((m) => m.ProdutosModule),
   },
-
-  { path: '', redirectTo: 'produtos', pathMatch: 'full' }, //aqui estou definindo a página produtos como a raiz
+  { path: '', redirectTo: 'produtos', pathMatch: 'full' },
+  {
+    path: 'carrinho',
+    loadChildren: () =>
+      import('./carrinho/carrinho.module').then((m) => m.CarrinhoModule),
+  }, //aqui estou definindo a página produtos como a raiz
   { path: '**', component: NaoEcontradoComponent }, //aqui é a página 404
 ];
 
