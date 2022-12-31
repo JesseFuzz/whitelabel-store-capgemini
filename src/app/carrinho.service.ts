@@ -25,6 +25,7 @@ export class CarrinhoService {
 
   removerProdutoCarrinho(produtoID: number) {
     this.itens = this.itens.filter((item) => item.id !== produtoID);
+
     localStorage.setItem('carrinho', JSON.stringify(this.itens));
   }
 }

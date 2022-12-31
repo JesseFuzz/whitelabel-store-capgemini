@@ -14,7 +14,8 @@ const routes: Routes = [
     path: 'carrinho',
     loadChildren: () =>
       import('./carrinho/carrinho.module').then((m) => m.CarrinhoModule),
-  }, //aqui estou definindo a página produtos como a raiz
+  },
+  { path: 'contato', loadChildren: () => import('./contato/contato.module').then(m => m.ContatoModule) }, //aqui estou definindo a página produtos como a raiz
   { path: '**', component: NaoEcontradoComponent }, //aqui é a página 404
 ];
 
